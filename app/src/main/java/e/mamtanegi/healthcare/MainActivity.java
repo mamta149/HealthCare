@@ -4,23 +4,64 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity {
-    private final int SPLASH_DISPLAY_LENGTH = 2000;
+    private RadioButton rbOwner;
+    private RadioButton rbUser;
+    private Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        init();
+        showUI();
+        setOnClickListener();
+    }
 
-                Intent intent = new Intent(MainActivity.this,userType.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
-            }
-        }, SPLASH_DISPLAY_LENGTH);
+    private void setOnClickListener() {
+        btnNext.setOnClickListener((View.OnClickListener) this);
+
+    }
+
+    private void showUI() {
+
+    }
+
+    private void init() {
+        rbOwner = (RadioButton) findViewById(R.id.rb_owner);
+        rbUser = (RadioButton) findViewById(R.id.rb_user);
+        btnNext = (Button) findViewById(R.id.btn_next);
+
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_next:
+                if (rbOwner.isChecked()) {
+                    Intent intent = new Intent(MainActivity.this, Adminstrative.class);
+                    intent.putExtra("id", 2);
+                    startActivity(intent);
+
+                } else if (rbUser.isChecked()) {
+                    Intent intent = new Intent(MainActivity.this, Patients.class);
+                    intent.putExtra("id", 1);
+                    startActivity(intent);
+
+                }
+                break;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
     }
 
 }
+
+
