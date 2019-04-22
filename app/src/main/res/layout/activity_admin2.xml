@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Adminstrative">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/hospital"/>
+    tools:context=".Admin">
     <LinearLayout
-        android:layout_marginTop="150dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="110dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
+
         <EditText
             android:id="@+id/et_username"
             android:layout_width="match_parent"
@@ -59,32 +58,32 @@
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
             android:hint="Id proof"
-            android:inputType="textPassword"
-            android:textSize="13dp" />
+                       android:textSize="13dp" />
 
 
         <EditText
-            android:id="@+id/expertin"
+            android:id="@+id/disease"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
-            android:hint=" Department"
+            android:hint=" Expertin"
             android:inputType="textPassword"
             android:textSize="13dp" />
 
-    </LinearLayout>
 
-    <Button
-        android:layout_marginTop="350dp"
-        android:id="@+id/btn_signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Signup" />
+        <Button
+            android:background="#C03F3F"
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:text="Signup" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="400dp"
+        android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -111,6 +110,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 </RelativeLayout>
