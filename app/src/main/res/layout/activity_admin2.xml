@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Patients"
-    >
+    tools:context=".Admin">
     <LinearLayout
         android:paddingLeft="10dp"
         android:layout_marginTop="110dp"
@@ -59,7 +58,7 @@
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
             android:hint="Id proof"
-            android:textSize="13dp" />
+                       android:textSize="13dp" />
 
 
         <EditText
@@ -67,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
-            android:hint=" Type of disease"
+            android:hint=" Expertin"
             android:inputType="textPassword"
             android:textSize="13dp" />
 
