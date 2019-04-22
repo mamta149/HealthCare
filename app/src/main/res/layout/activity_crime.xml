@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Crime">
+
+    <Button
+        android:id="@+id/bshowMapLocation"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#0099cc"
+        android:onClick="doSomething"
+        android:text="Location" />
+    <Button
+        android:id="@+id/bsendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#0099cc"
+        android:onClick="doSomething"
+        android:text="Send Email" />
+    <Button
+        android:id="@+id/bsendMessage"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#0099cc"
+        android:onClick="doSomething"
+        android:text="Send Message" />
+    <Button
+        android:id="@+id/bcall"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#0099cc"
+        android:onClick="doSomething"
+        android:text="Call" />
+
+
+</LinearLayout>
