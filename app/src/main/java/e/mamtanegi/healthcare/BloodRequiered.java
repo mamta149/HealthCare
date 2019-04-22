@@ -1,6 +1,10 @@
 package e.mamtanegi.healthcare;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +12,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class BloodRequiered extends AppCompatActivity {
-   // Button btn3;
-    //Button btn4;
+    Button becall;
+    Button bemsg;
+   String contenText="hey please help me";
     String bgroups[]={"select bloodgroup","O-","O+","A-","A+","B-","B+","AB-","AB+"};
     Spinner bgroup;
     Spinner citySpinner;
@@ -24,6 +30,7 @@ public class BloodRequiered extends AppCompatActivity {
 
         bgroup = (Spinner)findViewById(R.id.group) ;
         citySpinner= findViewById(R.id.city);
+
 
       //  bgroup.setOnItemSelectedListener(this);
         //citySpinner.setOnItemSelectedListener(this);
@@ -47,8 +54,28 @@ public class BloodRequiered extends AppCompatActivity {
 
 */
     }
+   /* public void showNormalViewNotification(){
 
-  //  @Override
+        NotificationCompat.Builder builder =new NotificationCompat.Builder();
+        builder.setContentTitle("Normal Regula");
+        // builder.setContentText("Hey I want help");
+        builder.setContentText(contenText);
+        builder.setSmallIcon(R.drawable.notifaction);
+        builder.setTicker("hey I want Help..");
+        builder.setAutoCancel(true);
+
+        //pass
+        Notification notification=builder.build();
+        NotificationManager manager=(NotificationManager) this.getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(839295,notification);
+
+
+    }
+
+*/
+    //  @Override
+
+
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
@@ -57,5 +84,48 @@ public class BloodRequiered extends AppCompatActivity {
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-    }
+
+    public void savelife(View view) {
+        Intent intent=null,chooser=null;
+        //Build the content of Notifaction
+
+        switch (view.getId()) {
+            case R.id.bemsg:
+                intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                //intent.setType("image/*");
+
+                //  intent.putExtra(Intent.EXTRA_TEXT,"hey check image..");
+                intent.putExtra(Intent.EXTRA_TEXT,"blood needed");
+                chooser=Intent.createChooser(intent,"Share Message...");
+                if(intent.resolveActivity(getPackageManager())!=null){
+                    startActivity(chooser);
+                }else{
+                    Toast.makeText(getApplicationContext(),"No apps available",Toast.LENGTH_SHORT).show();
+                }
+                             break;
+
+            case R.id.becall:
+
+                intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+917895149429"));
+                intent.setData(Uri.parse("tel:+918392955769"));
+                intent.setData(Uri.parse("tel:+919690598340"));
+                intent.setData(Uri.parse("tel:+914374365735"));
+
+                if(intent.resolveActivity(getPackageManager())!=null){
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(),"No apps available",Toast.LENGTH_SHORT).show();
+                }
+                         break;
+
+        }
+
+
+
+
+
+        }
+}
 

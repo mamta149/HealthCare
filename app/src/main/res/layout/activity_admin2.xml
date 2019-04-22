@@ -70,6 +70,14 @@
             android:inputType="textPassword"
             android:textSize="13dp" />
 
+        <Button
+            android:background="#C03F3F"
+            android:id="@+id/btncall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:text=" appoinment "
+            android:onClick="appointment"/>
 
         <Button
             android:background="#C03F3F"

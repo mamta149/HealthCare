@@ -44,7 +44,7 @@ public class Crime extends AppCompatActivity {
                 intent=new Intent(Intent.ACTION_SEND);
                 intent.setData(Uri.parse("mailto:"));
                 intent.setType("message/rfc822");
-                String[] send_to={"sonubutola6@gmail.com","butolasony@gmail.com"};
+                String[] send_to={"sonubutola6@gmail.com","negimamta149@gmail.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL,send_to);
 
                 intent.putExtra(Intent.EXTRA_SUBJECT,"HEY This is subject");
@@ -64,7 +64,7 @@ public class Crime extends AppCompatActivity {
                 //intent.setType("image/*");
 
                 //  intent.putExtra(Intent.EXTRA_TEXT,"hey check image..");
-                intent.putExtra(Intent.EXTRA_TEXT,"hey wasup....");
+                intent.putExtra(Intent.EXTRA_TEXT,"please help me i m in trouble");
                 chooser=Intent.createChooser(intent,"Share Message...");
                 if(intent.resolveActivity(getPackageManager())!=null){
                     startActivity(chooser);

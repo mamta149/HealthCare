@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RadioButton rbOwner;
     private RadioButton rbUser;
-    private Button btnNext;
+    private Button btnNext,crime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         rbOwner = (RadioButton) findViewById(R.id.rb_owner);
         rbUser = (RadioButton) findViewById(R.id.rb_user);
         btnNext = (Button) findViewById(R.id.btn_next);
-
+crime=findViewById(R.id.crime);
     //    FirebaseApp.initializeApp(this);
         rbOwner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, bloodbank.class);
+
+                startActivity(intent);
+
+            }
+        });
+        crime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Crime.class);
 
                 startActivity(intent);
 
